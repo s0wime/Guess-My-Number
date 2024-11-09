@@ -7,5 +7,18 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (!guess) {
     document.querySelector('.message').textContent = '⛔ No number!';
+    return;
+  }
+
+  if (guess > secretNumber) {
+    document.querySelector('.message').textContent = '📈 Too high!';
+    return;
+  } else if (guess < secretNumber) {
+    document.querySelector('.message').textContent = '📉 Too low!';
+    return;
+  }
+
+  if (guess === secretNumber) {
+    document.querySelector('.message').textContent = '🎉 Correct number!';
   }
 });
