@@ -32,6 +32,20 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 
   if (guess === secretNumber) {
+    document.querySelector('.number').textContent = secretNumber;
     document.querySelector('.message').textContent = '🎉 Correct number!';
+
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.guess').value = '';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.number').style.width = '15rem';
 });
